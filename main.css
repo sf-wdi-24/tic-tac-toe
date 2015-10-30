@@ -6,3 +6,13 @@
   border: 1px solid black;
   height: 150px;
 }
+
+.playX {
+	font-size: 100px;
+	background-color: #0000FF;
+}
+
+.playO {
+	font-size: 100px;
+	background-color: #00FF00;
+}
