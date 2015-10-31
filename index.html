@@ -6,7 +6,10 @@
   <!-- set viewport to device width to make site responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- bootstrap css -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
   <!-- custom styles -->
 
@@ -29,29 +32,32 @@
         <!-- you can nest rows inside of columns! -->
         <!-- our board has 3 rows, each with 3 columns inside -->
         <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
+          <div class="col-xs-4 box box-1"></div>
+          <div class="col-xs-4 box box-2"></div>
+          <div class="col-xs-4 box box-3"></div>
         </div>
 
         <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
+          <div class="col-xs-4 box box-4"></div>
+          <div class="col-xs-4 box box-5"></div>
+          <div class="col-xs-4 box box-6"></div>
         </div>
 
         <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
+          <div class="col-xs-4 box box-7"></div>
+          <div class="col-xs-4 box box-8"></div>
+          <div class="col-xs-4 box box-9"></div>
         </div>
       </div>
     </div>
   </div>
-  
+  <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default">Reset</button>
+  </div>
   <!-- jquery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 
   <!-- custom script -->
-
+  <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
