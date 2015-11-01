@@ -27,7 +27,20 @@
       <!-- a column represents our game board -->
       <!-- the `offset` class helps us center the board -->
       <div class="gameBoard col-md-6 col-md-offset-3">
-
+        <div class="choosePlayer row">
+          <div class="col-xs-12">
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default">Player 1</button>
+              <button type="button" class="btn btn-default">Player 2</button>
+            </div>
+          </div>
+        </div>
+        <div class="gameHeader row">
+          <div class="col-xs-12">
+            <h2 class="turnText">X has control of the board</h2>
+            <h2 class="winner"></h2>
+          </div>  
+        </div>  <!-- end gameHeader row -->
         <!-- you can nest rows inside of columns! -->
         <!-- our board has 3 rows, each with 3 columns inside -->
         <div class="row row1">
