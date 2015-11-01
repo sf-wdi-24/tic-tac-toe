@@ -1,5 +1,5 @@
 // wait for DOM to load before running JS
-$(function() {
+$('document').ready(function() {
 
   var currentPlayer = "x";
   
@@ -18,11 +18,9 @@ $(function() {
     }
   });
 
-  // $( '.btn-group' ).click(function() {
-  //   alert( 'Handler for .click() called.' );
-  //   $('.btn group').empty();
-  // });
-  // });
+  $( '.reset-button' ).click(function() {
+    $('.box').empty(); 
+  });
 
   // function getMove() {
   // console.log("Let's play tic tac toe!");
