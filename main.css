@@ -1,8 +1,55 @@
+body {
+	background: linear-gradient(pink, hotpink, pink, hotpink, pink, hotpink, pink);
+}
+
+h1 {
+	font-size: 72px;
+	color: gold;
+	text-outline: 2px 2px black;
+	font-weight: bold;
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-variant: small-caps;
+}
+
+hr {
+	color: goldenrod;
+}
+
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+ 
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+ 
+.btn-default {
+    background: gold;
+    color: goldenrod;
+}
+ 
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    background: goldenrod;
+    color: gold;
+}
+ 
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
+}
+
 #board {
   margin-top: 10px;
+  background-color: lightyellow;
 }
 
 .box {
-  border: 1px solid black;
+	color: goldenrod;
+  border: 1px solid goldenrod;
   height: 150px;
+	font-size: 100px;
 }
