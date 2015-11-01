@@ -49,6 +49,7 @@ $(document).ready(function(){
 			for(i = 0; i < 9; i++) {
 				$('.box').off('click');
 			}
+			$('.box').css('background-color', 'gold');
 			alert(winner + ' wins the game! To play again, press Reset');
 		}
 	}
@@ -59,6 +60,7 @@ $(document).ready(function(){
 		board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 		winner = false;
 	  $(".box").empty();
+		$('.box').css('background-color', 'lightyellow');
 		playGame();
 	}
 
