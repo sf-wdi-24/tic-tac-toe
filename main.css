@@ -1,8 +1,34 @@
+body {
+	background-color: #1c1b1b;
+}
+
+h1 {
+	color: #fff;
+}
+.container {
+	text-align: center;
+}
 #board {
   margin-top: 10px;
+  background-color: #333;
+}
+#board .hover:hover{
+	cursor: pointer;
+	background-color: #000;
 }
 
 .box {
   border: 1px solid black;
   height: 150px;
+}
+
+h3 {
+	color:white;
+}
+p {
+	color: white;
+	font-size: 95px;
+}
+.total {
+	font-size: 20px;
 }

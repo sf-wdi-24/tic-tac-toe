@@ -5,11 +5,10 @@
 
   <!-- set viewport to device width to make site responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <!-- bootstrap css -->
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
   <!-- custom styles -->
-
+<link rel="stylesheet" type="text/css" href="main.css">
   <title>Tic Tac Toe</title>
 </head>
 <body>
@@ -20,38 +19,45 @@
         <hr>
       </div>
     </div>
-    <div class="row">
+    <div class="container">
+      <p class='total'>O win count: <span id='total_counto'>0</span></p>
+      <p class='total'>X win count: <span id='total_countx'>0</span></p>
 
+    </div>
+    <div class="row">
       <!-- a column represents our game board -->
       <!-- the `offset` class helps us center the board -->
       <div class="col-md-6 col-md-offset-3" id="board">
+      <hr>
 
         <!-- you can nest rows inside of columns! -->
         <!-- our board has 3 rows, each with 3 columns inside -->
         <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
+          <div class="col-xs-4 box hover" id='a'><p>+</p></div>
+          <div class="col-xs-4 box hover" id='b'><p>+</p></div>
+          <div class="col-xs-4 box hover" id='c'><p>+</p></div>
         </div>
 
         <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
+          <div class="col-xs-4 box hover" id='d'><p>+</p></div>
+          <div class="col-xs-4 box hover" id='e'><p>+</p></div>
+          <div class="col-xs-4 box hover" id='f'><p>+</p></div>
         </div>
 
         <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
+          <div class="col-xs-4 box hover" id='g'><p>+</p></div>
+          <div class="col-xs-4 box hover" id='h'><p>+</p></div>
+          <div class="col-xs-4 box hover" id='i'><p>+</p></div>
         </div>
       </div>
     </div>
   </div>
-  
+  <div class="container">
+    <button type="button" class="btn btn-default" id="reset">Reset</button>
+  </div>
   <!-- jquery -->
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <!-- custom script -->
-
+<script src="main.js"></script>
 </body>
 </html>
