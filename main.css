@@ -1,8 +1,47 @@
+h1 {
+	font-family: 'Rokkitt', serif;
+	font-weight: 900;
+}
+
 #board {
   margin-top: 10px;
+  border: none;
+
+}
+
+#a, #b, #c {
+border-top: none;
+}
+
+#a, #d, #g {
+border-left: none;
+}
+
+#g, #h, #i {
+border-bottom: none;
+}
+
+#c, #f, #i {
+border-right: none;
 }
 
 .box {
-  border: 1px solid black;
+  border: 3px solid black;
   height: 150px;
+  font-family: 'Rokkitt', serif;
+  font-size: 75px;
+  padding: 25px;
 }
+
+.ttt{ 
+	font-size: 100px;
+
+}
+
+#turnMess {
+	position: relative;
+	text-align: left;
+	font-family: 'Rokkitt', serif;
+	font-weight: 900;
+}
+
