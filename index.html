@@ -6,52 +6,60 @@
   <!-- set viewport to device width to make site responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- bootstrap css -->
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
   <!-- custom styles -->
+<link rel = "stylesheet" href="main.css">
 
+<!-- custom font -->
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   <title>Tic Tac Toe</title>
 </head>
 <body>
   <div class="container text-center">
     <div class="row">
       <div class="col-md-12">
-        <h1>Tic Tac Toe</h1>
+        <h1 class="TTT">Tic Tac Toe</h1>
+          <button type="button" class="reset pageButtons btn btn-default"><span class="resetIcon glyphicon glyphicon-repeat" aria-hidden="true"></span>Reset Board</button>
         <hr>
       </div>
     </div>
-    <div class="row">
-
       <!-- a column represents our game board -->
       <!-- the `offset` class helps us center the board -->
-      <div class="col-md-6 col-md-offset-3" id="board">
-
+      <div class="gameBoard col-md-6 col-md-offset-3">
+        <div class="gameHeader row">
+          <div class="col-xs-12">
+            <h2 class="turnText">X has control of the board</h2>
+          </div>  
+        </div>  <!-- end gameHeader row -->
         <!-- you can nest rows inside of columns! -->
         <!-- our board has 3 rows, each with 3 columns inside -->
-        <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-        </div>
+        <div class="row row1">
+          <div class="gameBox r1c1 col-xs-4 box"></div>
+          <div class="gameBox r1c2 col-xs-4 box"></div>
+          <div class="gameBox r1c3 col-xs-4 box"></div>
+        </div> <!-- end row1 -->
 
-        <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-        </div>
+        <div class="row row2">
+          <div class="gameBox r2c1 col-xs-4 box"></div>
+          <div class="gameBox r2c2 col-xs-4 box"></div>
+          <div class="gameBox r2c3 col-xs-4 box"></div>
+        </div> <!-- end row2 -->
 
-        <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+        <div class="row row3">
+          <div class="gameBox r3c1 col-xs-4 box"></div>
+          <div class="gameBox r3c2 col-xs-4 box"></div>
+          <div class="gameBox r3c3 col-xs-4 box"></div>
+        </div> <!-- end row3 -->
+      </div> <!-- end gameBoard div -->
+    </div> <!-- end main row -->
+  </div> <!-- end container -->
   
   <!-- jquery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 
   <!-- custom script -->
-
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>

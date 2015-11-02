@@ -1,8 +1,59 @@
+body {
+	background-color: #0490B0;
+	background:-webkit-linear-gradient(#47AAC1,#0490B0,#025568);
+	background: -o-linear-gradient(#47AAC1,#0490B0,#025568);
+	background: -moz-linear-gradient(#47AAC1,#0490B0,#025568);
+	background: linear-gradient(#47AAC1,#0490B0,#025568);
+	color: #FFFFFF;
+	font-family: 'Raleway', sans-serif;
+}
 #board {
   margin-top: 10px;
 }
-
+.TTT {
+	display: inline-block;
+}
 .box {
-  border: 1px solid black;
+  border: 2px solid #FFFFFF;
   height: 150px;
+}
+.playX {
+	background-color: #4539C4;
+	background:-webkit-linear-gradient(#736AD5,#4539C4,#2013A3);
+	background: -o-linear-gradient(#736AD5,#4539C4,#2013A3);
+	background: -moz-linear-gradient(#736AD5,#4539C4,#2013A3);
+	background: linear-gradient(#736AD5,#4539C4,#2013A3);
+	color: #FFFFFF;
+	font-size: 100px;
+	transition-duration: 1000ms;
+	transition-timing-function: ease;
+	
+}
+.playO {
+	background-color: #FF7F00;
+	background:-webkit-linear-gradient(#FFA750,#FF7F00,#B55A00);
+	background: -o-linear-gradient(#FFA750,#FF7F00,#B55A00);
+	background: -moz-linear-gradient(#FFA750,#FF7F00,#B55A00);
+	background: linear-gradient(#FFA750,#FF7F00,#B55A00);
+	color: #000000;
+	font-size: 100px;
+	transition-duration: 1000ms;
+	transition-timing-function: ease;
+	
+}
+.pageButtons {
+	background-color: #FF7F00;
+	background-color: #FF7F00;
+	background:-webkit-linear-gradient(#FFA750,#FF7F00,#B55A00);
+	background: -o-linear-gradient(#FFA750,#FF7F00,#B55A00);
+	background: -moz-linear-gradient(#FFA750,#FF7F00,#B55A00);
+	background: linear-gradient(#FFA750,#FF7F00,#B55A00);
+	color: #FFFFFF;
+	display: inline-block;
+	padding-left: 12px;
+    margin-left: 36px;
+    margin-top: 3px;
+}
+.resetIcon {
+	padding: 5px;
 }
