@@ -46,9 +46,7 @@ $(document).ready(function(){
 			winner = board[8];
 		}
 		if(winner) {
-			for(i = 0; i < 9; i++) {
-				$('.box').off('click');
-			}
+			$('.box').off('click');
 			$('.box').css('background-color', 'gold');
 			alert(winner + ' wins the game! To play again, press Reset');
 		}
@@ -60,6 +58,7 @@ $(document).ready(function(){
 		board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 		winner = false;
 	  $(".box").empty();
+	  $(".box").off('click');
 		$('.box').css('background-color', 'lightyellow');
 		playGame();
 	}
@@ -69,10 +68,8 @@ $(document).ready(function(){
 		for (var i = 0; i < 9; i++) {
 		  $('.box').eq(i).on('click', {value: i}, takeTurn);
 		}
+		$('button').on('click', resetGame);	
 	}
-
-	// Sets the reset button
-	$('button').on('click', resetGame);
 
   playGame();
 });
