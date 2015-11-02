@@ -16,7 +16,7 @@ $(document).ready(function() {
 		  	$('#whosmove').text("Your move!");	
 		  	//Change button to 'reset board'
 		  	$('#setBoard').text("Reset Board");
-		  	if ($('#ComputerTrueCheckbox').prop("checked") === "checked"){
+		  	if ($('#ComputerTrueCheckbox').prop("checked") === true){
 				player_two = "Computer";
 			} else {
 				player_two = prompt("What is the second player's name?");
@@ -36,16 +36,19 @@ $(document).ready(function() {
   		if(($(idiwant).text() === "null") && (winner === false) && ($('#setBoard').text() !== "Start Game")){
 	  		if(counter%2 === 0){
 	  			$(idiwant).text("X");
+	  			$(idiwant).addClass("x");
 	  			last_player = name;
 				getWinner();
 	  			$('#whosmove').text(player_two + "'s move!");
 	  		} else {
 	  			$(idiwant).text("O");
+	  			$(idiwant).addClass("o");
 	  			last_player = player_two;
 				getWinner();
 	  			$('#whosmove').text(name + "'s move!");
 	  		}
 	  		$(idiwant).show();
+	  		$('#name').hide();
   			counter += 1;
   			console.log(counter);
   			if((counter === 9) && (winner === false)){
