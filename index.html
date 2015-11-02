@@ -9,6 +9,7 @@
   <!-- bootstrap css -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
   <!-- font links -->
+  <link href='https://fonts.googleapis.com/css?family=Frijole' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:700' rel='stylesheet' type='text/css'>
   <!-- custom styles -->
   <link rel="stylesheet" href="main.css" class="css">
@@ -17,9 +18,21 @@
 <body>
   <div class="container text-center">
     <div class="row">
-      <div class="col-md-12 header-footer">
-        <h1 id="tic-tac-toe">Tic Tac Toe</h1>
+      <div class="col-md-12 header">
+        <h1>Tic Tac Toe</h1>
         <hr>
+      </div>
+    </div>
+
+    <div class="row score-bar">
+      <div class="col-md-4">
+        <h4>X-Score: <span id="x-score">0</span></h4>
+      </div>
+      <div class="col-md-4">
+        <h4 id="winner"></h4>
+      </div>
+      <div class="col-md-4">
+        <h4>O-Score: <span id="o-score">0</span></h4>
       </div>
     </div>
     
@@ -61,8 +74,8 @@
     </div>
 
     <div class="row">
-      <div class="col-md-12 header-footer">
-        <button type="button" class="btn btn-default" id="reset">Reset</button>
+      <div class="col-md-12 footer">
+        <button type="button" class="btn btn-default" id="reset">Clear Board</button>
       </div>
     </div>
 
