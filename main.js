@@ -6,6 +6,7 @@ $(document).ready(function() {
 	var last_player = "";
 	var player_two = "Default";
 	var moveArray = [];
+  var wait = false;
   
   	// Set (or reset) board with null
   	$('#setBoard').click(function(){
@@ -34,7 +35,7 @@ $(document).ready(function() {
   	$('.box').click(function(){
   		var idiwant = "#"+this.id[0]+this.id;
   		// Assumes board is open and there is no winner yet
-  		if(($(idiwant).text() === "null") && (winner === false) && ($('#setBoard').text() !== "Start Game")){
+  		if(($(idiwant).text() === "null") && (wait === false) && (winner === false) && ($('#setBoard').text() !== "Start Game")){
 	  		if(counter%2 === 0){
 	  			$(idiwant).text("X");
           console.log($(idiwant).addClass("x"));
@@ -68,7 +69,9 @@ $(document).ready(function() {
   			}
   		} else {
   			// Assumes it's a new game
-  			if($('#setBoard').text() === "Start Game"){
+  			if (wait === true) {
+          alert("Wait for computer to move");
+        } else if($('#setBoard').text() === "Start Game"){
   				alert("Start game! (see button above)");
   			// Assumes there has been a winner
   			} else if(winner === true) {
@@ -117,26 +120,31 @@ $(document).ready(function() {
   		console.log("computerMove: " + computerMoveNum);
   		if (computerMoveNum === undefined) {
         console.log("copmuterMoveNum is undefined");
+        wait = true;
         setTimeout(computerMove,2500);
       } else if(computerMoveNum === 1){
   			$("#aa1").text("O");
   			$("#aa1").addClass("o");
   			$("#aa1").show();
+        wait = false;
         moveArray.push(computerMoveNum);
   		} else if(computerMoveNum === 2){
   			$("#aa2").text("O");
   			$("#aa2").addClass("o");
   			$("#aa2").show();
+        wait = false;
         moveArray.push(computerMoveNum);
   		} else if(computerMoveNum === 3){
   			$("#aa3").text("O");
   			$("#aa3").addClass("o");
   			$("#aa3").show();
+        wait = false;
         moveArray.push(computerMoveNum);
   		} else if(computerMoveNum === 4){
   			$("#bb1").text("O");
   			$("#bb1").addClass("o");
   			$("#bb1").show();
+        wait = false;
         moveArray.push(computerMoveNum);
   		} else if(computerMoveNum === 5){
   			$("#bb2").text("O");
@@ -147,21 +155,25 @@ $(document).ready(function() {
   			$("#bb3").text("O");
   			$("#bb3").addClass("o");
   			$("#bb3").show();
+        wait = false;
         moveArray.push(computerMoveNum);
   		} else if(computerMoveNum === 7){
   			$("#cc1").text("O");
   			$("#cc1").addClass("o");
   			$("#cc1").show();
+        wait = false;
         moveArray.push(computerMoveNum);
   		} else if(computerMoveNum === 8){
   			$("#cc2").text("O");
   			$("#cc2").addClass("o");
   			$("#cc2").show();
+        wait = false;
         moveArray.push(computerMoveNum);
   		} else if(computerMoveNum === 9){
   			$("#cc3").text("O");
   			$("#cc3").addClass("o");
   			$("#cc3").show();
+        wait = false;
         moveArray.push(computerMoveNum);
   		} else {
   			console.log("not one of them");
