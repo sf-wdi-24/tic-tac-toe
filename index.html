@@ -1,10 +1,18 @@
 <!DOCTYPE html>
+<!-- Dave Sloan's tic tac toe game -->
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
 
-  <!-- set viewport to device width to make site responsive -->
+    <!-- set viewport to device width to make site responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="main.css">
 
   <!-- bootstrap css -->
 
@@ -13,13 +21,9 @@
   <title>Tic Tac Toe</title>
 </head>
 <body>
-  <div class="container text-center">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Tic Tac Toe</h1>
+        <h1 class="gamename">Tic Tac Toe</h1>
         <hr>
-      </div>
-    </div>
+
     <div class="row">
 
       <!-- a column represents our game board -->
@@ -29,29 +33,46 @@
         <!-- you can nest rows inside of columns! -->
         <!-- our board has 3 rows, each with 3 columns inside -->
         <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
+          <div class="col-xs-4 box" id="a"><p id="a"></p></div>
+          <div class="col-xs-4 box" id="b"><p id="b"></p></div>
+          <div class="col-xs-4 box" id="c"><p id="c"></p></div>
         </div>
 
         <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
+          <div class="col-xs-4 box" id="d"><p id="d"></p></div>
+          <div class="col-xs-4 box" id="e"><p id="e"></p></div>
+          <div class="col-xs-4 box" id="f"><p id="f"></p></div>
         </div>
 
         <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
+          <div class="col-xs-4 box" id="g"><p id="g"></p></div>
+          <div class="col-xs-4 box" id="h"><p id="h"></p></div>
+          <div class="col-xs-4 box" id="i"><p id="i"></p></div>
         </div>
       </div>
     </div>
   </div>
+  <br>
+  <div class="damnbutton row col-md-12 box">
+        <button type="button" class="btn btn-default btn-lg">
+      <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Reset</button>
+  </div>
+  <br>
+ <!-- <div>
+    <p id="counter"></p>
+  </div> -->
+  <div>
+      <p id="whichcell"></p>
+  </div>
+  <div>
+      <p id="whosemove"></p>
+  </div>
   
   <!-- jquery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 
   <!-- custom script -->
+  <script type="text/javascript" src="main.js"></script>
 
 </body>
 </html>
