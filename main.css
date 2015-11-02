@@ -1,8 +1,36 @@
+.header-footer {
+	background-color: #F3EFE0;
+}
+
+.box-holder {
+	background-color: #3399CC;
+}
+
 #board {
   margin-top: 10px;
+  background-color: red;
+  margin-bottom: 10px;
 }
 
 .box {
-  border: 1px solid black;
+  border: 1px solid white;
   height: 150px;
+  /* horizontally and vertcally center */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#tic-tac-toe {
+	font-family: 'Droid Serif', serif;
+}
+
+#x, #o {
+	color: white;
+	font-size: 75px;
+}
+
+#reset {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }

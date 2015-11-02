@@ -8,6 +8,8 @@
 
   <!-- bootstrap css -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <!-- font links -->
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:700' rel='stylesheet' type='text/css'>
   <!-- custom styles -->
   <link rel="stylesheet" href="main.css" class="css">
   <title>Tic Tac Toe</title>
@@ -15,12 +17,13 @@
 <body>
   <div class="container text-center">
     <div class="row">
-      <div class="col-md-12">
-        <h1>Tic Tac Toe</h1>
+      <div class="col-md-12 header-footer">
+        <h1 id="tic-tac-toe">Tic Tac Toe</h1>
         <hr>
       </div>
     </div>
-    <div class="row">
+    
+    <div class="row box-holder">
 
       <!-- a column represents our game board -->
       <!-- the `offset` class helps us center the board -->
@@ -56,12 +59,15 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="container" style="text-align: center">
-    <button type="button" class="btn btn-default" id="reset">Reset</button>
+    <div class="row">
+      <div class="col-md-12 header-footer">
+        <button type="button" class="btn btn-default" id="reset">Reset</button>
+      </div>
+    </div>
+
   </div>
-  
+    
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
