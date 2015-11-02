@@ -5,6 +5,7 @@ $(document).ready(function() {
 	var winner = false;
 	var last_player = "";
 	var player_two = "Default";
+	var moveArray = [];
   
   	// Set (or reset) board with null
   	$('#setBoard').click(function(){
@@ -36,21 +37,29 @@ $(document).ready(function() {
   		if(($(idiwant).text() === "null") && (winner === false) && ($('#setBoard').text() !== "Start Game")){
 	  		if(counter%2 === 0){
 	  			$(idiwant).text("X");
+	  			idToNumber(idiwant);
 	  			$(idiwant).addClass("x");
 	  			last_player = name;
+	  			$(idiwant).show();
 				getWinner();
 	  			$('#whosmove').text(player_two + "'s move!");
-	  		} else {
+	  			counter += 1;
+	  		} else if($('#ComputerTrueCheckbox').prop("checked") === false) {
 	  			$(idiwant).text("O");
 	  			$(idiwant).addClass("o");
 	  			last_player = player_two;
+	  			$(idiwant).show();
 				getWinner();
 	  			$('#whosmove').text(name + "'s move!");
+	  			counter += 1;
+	  		} else {
+	  			computerMove();
+	  			last_player = "Computer";
+	  			getWinner();
+	  			counter += 1;
 	  		}
-	  		$(idiwant).show();
 	  		$('#name').hide();
-  			counter += 1;
-  			console.log(counter);
+  			//console.log(counter);
   			if((counter === 9) && (winner === false)){
   				alert("Cat's game!");
   				$('#whosmove').text("");
@@ -96,6 +105,101 @@ $(document).ready(function() {
 	  	} else {
 			certainResetBoard();
 	  	}
+  	}
+
+  	// The Computer's move
+  	function computerMove() {
+  		var computerMoveNum = randomMove();
+  		console.log("computerMove: " + computerMoveNum);
+  		if(computerMoveNum === 1){
+  			$("#aa1").text("O");
+  			$("#aa1").addClass("o");
+  			$("#aa1").show();
+  		} else if(computerMoveNum === 2){
+  			$("#aa2").text("O");
+  			$("#aa2").addClass("o");
+  			$("#aa2").show();
+  		} else if(computerMoveNum === 3){
+  			$("#aa3").text("O");
+  			$("#aa3").addClass("o");
+  			$("#aa3").show();
+  		} else if(computerMoveNum === 4){
+  			$("#bb1").text("O");
+  			$("#bb1").addClass("o");
+  			$("#bb1").show();
+  		} else if(computerMoveNum === 5){
+  			$("#bb2").text("O");
+  			$("#bb2").addClass("o");
+  			$("#bb2").show();
+  		} else if(computerMoveNum === 6){
+  			$("#bb3").text("O");
+  			$("#bb3").addClass("o");
+  			$("#bb3").show();
+  		} else if(computerMoveNum === 7){
+  			$("#cc1").text("O");
+  			$("#cc1").addClass("o");
+  			$("#cc1").show();
+  		} else if(computerMoveNum === 8){
+  			$("#cc2").text("O");
+  			$("#cc2").addClass("o");
+  			$("#cc2").show();
+  		} else if(computerMoveNum === 9){
+  			$("#cc3").text("O");
+  			$("#cc3").addClass("o");
+  			$("#cc3").show();
+  		} else {
+  			console.log("not one of them");
+  			setTimeout(computerMove,2500);
+  		}
+  		/*
+  		switch(computerMoveNum) {
+  			case 1: $("#aa1").text("O"); $("#aa1").addClass("o"); $("aa1").show(); console.log("c1"); break;
+  			case 2: $("#aa2").text("O"); $("#aa2").addClass("o"); $("aa2").show(); console.log("c2"); break;
+  			case 3: $("#aa3").text("O"); $("#aa3").addClass("o"); $("aa3").show(); console.log("c3"); break;
+  			case 4: $("#bb1").text("O"); $("#bb1").addClass("o"); $("bb1").show(); console.log("c4"); break;
+  			case 5: $("#bb1").text("O"); $("#bb2").addClass("o"); $("bb2").show(); console.log("c5"); break;
+  			case 6: $("#bb1").text("O"); $("#bb3").addClass("o"); $("bb3").show(); console.log("c6"); break;
+  			case 7: $("#cc1").text("O"); $("#cc1").addClass("o"); $("cc1").show(); console.log("c7"); break;
+  			case 8: $("#cc1").text("O"); $("#cc2").addClass("o"); $("cc2").show(); console.log("c8"); break;
+  			case 9: $("#cc1").text("O"); $("#cc3").addClass("o"); $("cc3").show(); console.log("c9"); break;
+  		}*/
+  	}
+
+  	// Choosing random number to determine computer's move
+  	function randomMove() {
+  		var moveNumber = Math.floor(Math.random() * (10 - 1)) + 1;
+  		if(moveArray.indexOf(moveNumber) !== -1){
+  			setTimeout(randomMove,2500);
+  		} else {
+  			console.log("randomMove else: " + moveNumber);
+  			moveArray.push(moveNumber);
+  			return moveNumber;
+  		}
+  	}
+
+  	// Translates player move to number and adds to moved array
+  	function idToNumber(move) {
+  		if(move==="#aa1"){
+  			moveArray.push(1);
+  		} else if(move==="#aa2"){
+  			moveArray.push(2);
+  		} else if(move==="#aa3"){
+  			moveArray.push(3);
+  		} else if(move==="#bb1"){
+  			moveArray.push(4);
+  		} else if(move==="#bb2"){
+  			moveArray.push(5);
+  		} else if(move==="#bb3"){
+  			moveArray.push(6);
+  		} else if(move==="#cc1"){
+  			moveArray.push(7);
+  		} else if(move==="#cc2"){
+  			moveArray.push(8);
+  		} else if(move==="#cc3"){
+  			moveArray.push(9);
+  		} else {
+  			console.error("itToNumber error: " + move);
+  		}
   	}
 
   	// Determine the winner
