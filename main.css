@@ -5,4 +5,10 @@
 .box {
   border: 1px solid black;
   height: 150px;
+  text-align: center;
+  vertical-align: center;
+}
+
+.inbox {
+	font-size: 100px;
 }
