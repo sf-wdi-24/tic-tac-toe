@@ -1,8 +1,88 @@
+
+
+body {
+	font-family: 'Shadows Into Light', cursive;
+}
+
+h1 {
+	font-size: 70px;
+	font-color: rgb(150,050, 000) ;
+	
+	font-size: 70px;
+	color: green;
+}
+
+p {
+	
+	font-size: 20px;
+	
+	text-align: center;
+}
+
+.square {
+	
+	background-color: grey;
+	positon: relative;
+	
+}
+
+
 #board {
-  margin-top: 10px;
+  
+  margin: 50px;
+  padding-left: 227px;
+
+  
 }
 
 .box {
-  border: 1px solid black;
+  
+  border: 3px solid black;
   height: 150px;
+  width: 200px;
+  font-size: 90px;
+
+ }
+
+ #a{
+ 	
+ 	border-top-left-radius: 30px;
+ }
+
+ #c {
+ 	
+ 	border-top-right-radius: 30px;
+ }
+
+ #g {
+ 	
+ 	border-bottom-left-radius: 30px;
+ }
+
+ #i{
+ 	
+ 	border-bottom-right-radius: 30px;
+ }
+
+
+.button {
+	
+	padding-left: 680px;
+
 }
+
+.btn-default:hover {
+	
+	background-color: blue;
+}
+
+.clearfix {
+	
+	overflow: auto;
+}
+
+
+
+
+
+
