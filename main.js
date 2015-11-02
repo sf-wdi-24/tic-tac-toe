@@ -36,11 +36,18 @@ $(function() {
 
 play();
 /**
-  function getWinner(move) {
+  function getWinner(xORo) {
 		for (i = 0; < winArray.length; i++) {
 			var possibleWins = winArray[i];
 			var spotCount = 0;
-			for (j = 0 < )
+			for (j = 0 < xORo.length; j++ ) {
+				if (possibleWins.indexOf(xORo[j]) > -1) {
+					spotCount++;
+				}
+				if (spotCount === 3) {
+					break;
+				}
+			}
   }
 **/
 
