@@ -46,12 +46,20 @@ $(document).ready(function() {
         var o = record.filter(function(value,i) {
           return i % 2 !== 0;
         });
-        //declare winner and disable the click of remaining box
+        //declare winner, get score, notify winner, disable the click of remaining box
         if (declareWinner(x)) {
-          alert('x win');
+          //get score for x
+          $('#x-score').html(function(i, value) { //value here is O in span
+            return value*1+1;
+          });
+          $('#winner').html("X Wins").fadeOut(500).fadeIn(500);
           $('.box').off('click');
         } else if (declareWinner(o)) {
-          alert('o win'); 
+          //get score for o
+          $('#o-score').html(function(i, value) { //value here is 0 in span
+            return value*1+1;
+          });
+          $('#winner').html("O Wins").fadeOut(500).fadeIn(500);
           $('.box').off('click');
         } else if (!declareWinner(x) && !declareWinner(o) && clickCount === 9) {
           alert('It\' a tie game');
@@ -68,6 +76,7 @@ $(document).ready(function() {
       record = [];
       count = 0;
       $('.box').empty();
+      $('#winner').empty();
       $('.box').off('click');
       $('.box').each(function(index){
         $(this).on('click', {x:index}, play);
