@@ -29,6 +29,8 @@ $(function() {
 
 //get winner
 //very dirty way 
+var winCountx = 0;
+var winCounto = 0;
 function playMore(){
 var x = 'x';
 var o = 'o';
@@ -52,7 +54,8 @@ var spot9 = $('#i');
 			spot1.hasClass('o') && spot5.hasClass('o') && spot9.hasClass('o') ||
 			spot3.hasClass('o') && spot5.hasClass('o') && spot7.hasClass('o')
 			) {
-			alert('winner is ' + o )
+			winCounto++
+			$('#total_counto').html(winCounto)
 		  $('.box').removeClass('o');
 	    $('.box').removeClass('x');
 	    $('.box').off();
@@ -65,7 +68,8 @@ var spot9 = $('#i');
 			spot1.hasClass('x') && spot5.hasClass('x') && spot9.hasClass('x') ||
 			spot3.hasClass('x') && spot5.hasClass('x') && spot7.hasClass('x')
 			) {
-			alert('winner is ' + x );
+			winCountx++;
+			$('#total_countx').html(winCountx);
 			$('.box').removeClass('o');
 	    $('.box').removeClass('x');
 	    $('.box').off();

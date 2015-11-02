@@ -22,8 +22,13 @@ h1 {
   height: 150px;
 }
 
-
+h3 {
+	color:white;
+}
 p {
 	color: white;
 	font-size: 95px;
+}
+.total {
+	font-size: 20px;
 }
