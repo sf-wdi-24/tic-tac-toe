@@ -49,7 +49,7 @@ $(document).ready(function() {
         //declare winner and disable the click of remaining box
         if (declareWinner(x)) {
           alert('x win');
-          $('.box').off('click'); 
+          $('.box').off('click');
         } else if (declareWinner(o)) {
           alert('o win'); 
           $('.box').off('click');
@@ -64,10 +64,11 @@ $(document).ready(function() {
     });
     //reset record and all counter, clear the board, then play again
     $('#reset').on('click',function(){
-      $('.box').empty();
       clickCount = 0;
       record = [];
       count = 0;
+      $('.box').empty();
+      $('.box').off('click');
       $('.box').each(function(index){
         $(this).on('click', {x:index}, play);
       });
