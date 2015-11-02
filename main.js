@@ -7,10 +7,10 @@ $(function() {
 		turnCount++;
 		if (turnCount % 2 === 0) {
 			$(this).html('<p>X</p>');
-			$(this).attr('disabled','disabled');
+			$(this).off('click');
 		}else {
-			$(this).html('<p>O</p>')
-			$(this).attr('disabled','disabled');
+			$(this).html('<p>O</p>');
+			$(this).off('click');
 		}
 	})
 
