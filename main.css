@@ -3,6 +3,13 @@
 }
 
 .box {
-  border: 1px solid black;
+  border: 7px solid black;
   height: 150px;
+}
+h1{
+	font-family: 'Shadows Into Light', cursive;
+	color: green;
+}
+body{
+	font-size: 100px;
 }

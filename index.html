@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!--google fonts link-->
+  <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
 
   <!-- set viewport to device width to make site responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- bootstrap css -->
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous"> 
   <!-- custom styles -->
-
+<link rel="stylesheet" href="main.css">
   <title>Tic Tac Toe</title>
 </head>
 <body>
@@ -20,6 +22,10 @@
         <hr>
       </div>
     </div>
+
+    <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default">Reset</button>
+</div>
     <div class="row">
 
       <!-- a column represents our game board -->
@@ -29,29 +35,31 @@
         <!-- you can nest rows inside of columns! -->
         <!-- our board has 3 rows, each with 3 columns inside -->
         <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
+          <div class="col-xs-4 box"id="a"></div>
+          <div class="col-xs-4 box"id="b"></div>
+          <div class="col-xs-4 box"id="c"></div>
         </div>
 
         <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
+          <div class="col-xs-4 box"id="d"></div>
+          <div class="col-xs-4 box"id="e"></div>
+          <div class="col-xs-4 box"id="f"></div>
         </div>
 
         <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
+          <div class="col-xs-4 box"id="g"></div>
+          <div class="col-xs-4 box"id="h"></div>
+          <div class="col-xs-4 box"id="i"></div>
         </div>
       </div>
     </div>
   </div>
   
   <!-- jquery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 
   <!-- custom script -->
+<script type="text/javascript" src="main.js"></script>
 
 </body>
 </html>
