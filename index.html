@@ -7,8 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- bootstrap css -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
   <!-- custom styles -->
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="main.js"></script>
 
   <title>Tic Tac Toe</title>
 </head>
@@ -17,7 +23,12 @@
     <div class="row">
       <div class="col-md-12">
         <h1>Tic Tac Toe</h1>
-        <hr>
+        <form>
+        <button type="button" id="setBoard">Start Game</button>
+        <p id="name"></p>
+        <p id="whosmove"></p>
+        <label id="ComputerTrueCheckboxLabel"><input id="ComputerTrueCheckbox" type="checkbox" checked="checked" > Play Against Computer</label>
+        </form>
       </div>
     </div>
     <div class="row">
@@ -29,21 +40,21 @@
         <!-- you can nest rows inside of columns! -->
         <!-- our board has 3 rows, each with 3 columns inside -->
         <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
+          <div class="col-xs-4 box" id="a1"><p class="inbox" id="aa1"></p></div>
+          <div class="col-xs-4 box" id="a2"><p class="inbox" id="aa2"></p></div>
+          <div class="col-xs-4 box" id="a3"><p class="inbox" id="aa3"></p></div>
         </div>
 
         <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
+          <div class="col-xs-4 box" id="b1"><p class="inbox" id="bb1"></p></div>
+          <div class="col-xs-4 box" id="b2"><p class="inbox" id="bb2"></p></div>
+          <div class="col-xs-4 box" id="b3"><p class="inbox" id="bb3"></p></div>
         </div>
 
         <div class="row">
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
-          <div class="col-xs-4 box"></div>
+          <div class="col-xs-4 box" id="c1"><p class="inbox" id="cc1"></p></div>
+          <div class="col-xs-4 box" id="c2"><p class="inbox" id="cc2"></p></div>
+          <div class="col-xs-4 box" id="c3"><p class="inbox" id="cc3"></p></div>
         </div>
       </div>
     </div>

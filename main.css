@@ -6,3 +6,15 @@
   border: 1px solid black;
   height: 150px;
 }
+
+.inbox {
+	font-size: 100px;
+}
+
+.x {
+	color: blue;
+}
+
+.o {
+	color: red;
+}
