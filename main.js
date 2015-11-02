@@ -2,7 +2,7 @@
 $(document).ready(function() {
   // your code here
       var clickCount = 0;
-    var record = [];
+    var moveCoordinate = [];
     var winCases = [[0,1,2],[0,3,6],[2,5,8],[6,7,8],[0,4,8],[2,4,6],[1,4,7],[3,4,5]];
     function declareWinner(move) {
       for (var i = 0; i < winCases.length; i++) {
@@ -35,15 +35,15 @@ $(document).ready(function() {
           $(this).append("<h1 id='o'>O</h1>");
           $(this).off('click');
         }
-      //record index of x boxes and o boxes
-      record.push(event.data.x);
-      if (record.length >= 5) {
+      //moveCoordinate index of x boxes and o boxes
+      moveCoordinate.push(event.data.x);
+      if (moveCoordinate.length >= 5) {
           //get index of x boxes
-        var x = record.filter(function(value,i) {
+        var x = moveCoordinate.filter(function(value,i) {
           return i % 2 === 0;
         });
         //get index of o boxes
-        var o = record.filter(function(value,i) {
+        var o = moveCoordinate.filter(function(value,i) {
           return i % 2 !== 0;
         });
         //declare winner, get score, notify winner, disable the click of remaining box
@@ -62,7 +62,7 @@ $(document).ready(function() {
           $('#winner').html("O Wins").fadeOut(500).fadeIn(500);
           $('.box').off('click');
         } else if (!declareWinner(x) && !declareWinner(o) && clickCount === 9) {
-          alert('It\' a tie game');
+          $('#winner').html('Tie').fadeOut(500).fadeIn(500);
         }
       }
     }
@@ -70,10 +70,10 @@ $(document).ready(function() {
     $('.box').each(function(index){
         $(this).on('click', {x:index}, play);
     });
-    //reset record and all counter, clear the board, then play again
+    //reset moveCoordinate and all counter, clear the board, then play again
     $('#reset').on('click',function(){
       clickCount = 0;
-      record = [];
+      moveCoordinate = [];
       count = 0;
       $('.box').empty();
       $('#winner').empty();
