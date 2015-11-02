@@ -87,41 +87,49 @@ function checkWinClass (play) {
   if (($('.r1c1').text() === play) && ($('.r1c2').text() === play) && ($('.r1c3').text() === play)) {
      $('.turnText').text( play + ' has won the game!');
      gameOver = true;
+     alert('Player ' + play + ' has won the game.  Click Reset Board to play again.');
      return gameOver;
   }
   else if (($('.r1c1').text() === play) && ($('.r2c1').text() === play) && ($('.r3c1').text() === play)) {
   	$('.turnText').text( play + ' has won the game!');
      gameOver = true;
+     alert('Player ' + play + ' has won the game.  Click Reset Board to play again.');
      return gameOver;
   }
   else if (($('.r1c1').text() === play) && ($('.r2c2').text() === play) && ($('.r3c3').text() === play)) {
   	$('.turnText').text( play + ' has won the game!');
      gameOver = true;
+     alert('Player ' + play + ' has won the game.  Click Reset Board to play again.');
      return gameOver;
   }
   else if (($('.r2c1').text() === play) && ($('.r2c2').text() === play) && ($('.r2c3').text() === play)) {
   	$('.turnText').text( play + ' has won the game!');
      gameOver = true;
+     alert('Player ' + play + ' has won the game.  Click Reset Board to play again.');
      return gameOver;
   }
   else if (($('.r3c1').text() === play) && ($('.r3c2').text() === play) && ($('.r3c3').text() === play)) {
   	$('.turnText').text( play + ' has won the game!');
      gameOver = true;
+     alert('Player ' + play + ' has won the game.  Click Reset Board to play again.');
      return gameOver;
   }
   else if (($('.r1c2').text() === play) && ($('.r2c2').text() === play) && ($('.r3c2').text() === play)) {
   	$('.turnText').text( play + ' has won the game!');
      gameOver = true;
+     alert('Player ' + play + ' has won the game.  Click Reset Board to play again.');
      return gameOver;
   }
   else if (($('.r1c3').text() === play) && ($('.r2c3').text() === play) && ($('.r3c3').text() === play)) {
   	$('.turnText').text( play + ' has won the game!');
      gameOver = true;
+     alert('Player ' + play + ' has won the game.  Click Reset Board to play again.');
      return gameOver;
   }
   else if (($('.r1c3').text() === play) && ($('.r2c2').text() === play) && ($('.r3c1').text() === play)) {
   	$('.turnText').text( play + ' has won the game!');
      gameOver = true;
+     alert('Player ' + play + ' has won the game.  Click Reset Board to play again.');
      return gameOver;
   }
   else {
