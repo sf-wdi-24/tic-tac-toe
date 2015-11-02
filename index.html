@@ -12,7 +12,7 @@
   <!-- custom styles -->
 <link rel = "stylesheet" href="main.css">
 
- <!-- custom font -->
+<!-- custom font -->
 <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   <title>Tic Tac Toe</title>
 </head>
@@ -20,23 +20,14 @@
   <div class="container text-center">
     <div class="row">
       <div class="col-md-12">
-        <h1>Tic Tac Toe</h1>
+        <h1 class="TTT">Tic Tac Toe</h1>
+          <button type="button" class="reset pageButtons btn btn-default"><span class="resetIcon glyphicon glyphicon-repeat" aria-hidden="true"></span>Reset Board</button>
         <hr>
       </div>
     </div>
-    <div class="row">
-
       <!-- a column represents our game board -->
       <!-- the `offset` class helps us center the board -->
       <div class="gameBoard col-md-6 col-md-offset-3">
-        <div class="choosePlayer row">
-          <div class="col-xs-12">
-            <div class="btn-group" role="group" aria-label="...">
-              <button type="button" class="pageButtons btn btn-default">Player 1</button>
-              <button type="button" class="pageButtons btn btn-default">Player 2</button>
-            </div>
-          </div>
-        </div>
         <div class="gameHeader row">
           <div class="col-xs-12">
             <h2 class="turnText">X has control of the board</h2>
@@ -62,9 +53,6 @@
           <div class="gameBox r3c2 col-xs-4 box"></div>
           <div class="gameBox r3c3 col-xs-4 box"></div>
         </div> <!-- end row3 -->
-        <div class="row button">
-          <button type="button" class="reset pageButtons btn btn-default"><span class="resetIcon glyphicon glyphicon-repeat" aria-hidden="true"></span>Reset</button>
-        </div> <!-- end button row -->
       </div> <!-- end gameBoard div -->
     </div> <!-- end main row -->
   </div> <!-- end container -->

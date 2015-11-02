@@ -10,8 +10,8 @@ body {
 #board {
   margin-top: 10px;
 }
-.turnText {
-
+.TTT {
+	display: inline-block;
 }
 .box {
   border: 2px solid #FFFFFF;
@@ -25,6 +25,8 @@ body {
 	background: linear-gradient(#736AD5,#4539C4,#2013A3);
 	color: #FFFFFF;
 	font-size: 100px;
+	transition-duration: 1000ms;
+	transition-timing-function: ease;
 	
 }
 .playO {
@@ -35,17 +37,25 @@ body {
 	background: linear-gradient(#FFA750,#FF7F00,#B55A00);
 	color: #000000;
 	font-size: 100px;
+	transition-duration: 1000ms;
+	transition-timing-function: ease;
+	
 }
 .pageButtons {
 	background-color: #FF7F00;
+	background-color: #FF7F00;
+	background:-webkit-linear-gradient(#FFA750,#FF7F00,#B55A00);
+	background: -o-linear-gradient(#FFA750,#FF7F00,#B55A00);
+	background: -moz-linear-gradient(#FFA750,#FF7F00,#B55A00);
+	background: linear-gradient(#FFA750,#FF7F00,#B55A00);
 	color: #FFFFFF;
+	display: inline-block;
+	padding-left: 12px;
+    margin-left: 36px;
+    margin-top: 3px;
 }
-.reset {
-	/*background-color: #FF7F00;*/
-	margin: 20px 0;
-	/*margin-top: 20px;*/
+}
 
-}
 .resetIcon {
 	padding: 5px;
 }
