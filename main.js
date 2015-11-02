@@ -1,18 +1,24 @@
 // wait for DOM to load before running JS
 $(document).ready(function () {
 	//Setting up Variables
-	var winningArray = [[0,1,2],[0,3,6],[0,4,8],[1,4,7],[2,4,6],[2,5,8],[3,4,5],[6,7,8]];
+	//var winningArray = [[0,1,2],[0,3,6],[0,4,8],[1,4,7],[2,4,6],[2,5,8],[3,4,5],[6,7,8]];
   var turn = true ;
-  //var turnCounter = 0;
+  var turnCounter = 0;
  	var moveSquare;
  	var xMoves = [];
   var oMoves = [];
   var tempWin = [];
   var tempMoves = [];
+  var gameOver = false;
   //End of Variables
 
   //Selecting a game square
-  $('.gameBox').click(function (event){
+  
+  	$('.gameBox').click(function (event){
+   	if (gameOver) {
+  	return true;
+  }
+  else {
    	if (turn){
   		if ($(this).hasClass('playX')){
   			console.log('hasclass playX');
@@ -29,10 +35,17 @@ $(document).ready(function () {
 				xMoves.push(moveSquare);
 				xMoves.sort();
 				turn = false;
-				//turnCounter++;
-				$('.turnText').text('O has control of the board');
+				turnCounter++;
+				$('.turnText').text('O has control of the board');	
+				console.log('turn counter is set at ' + turnCounter);
   		} //end playX set square
   		checkWinClass('X');
+  		if (turnCounter >= 9) {    //move this below checkwin class
+					$('.turnText').text('Tie Game.  Click reset to play again');
+				}
+				else {
+					
+				}
   	} //end x turn
   	else {
   		if ($(this).hasClass('playX')){
@@ -49,13 +62,21 @@ $(document).ready(function () {
 				oMoves.push(moveSquare);
 				oMoves.sort();
 				turn = true;
-				//turnCounter++;
-				$('.turnText').text('X has control of the board');
+				turnCounter++;
+				$('.turnText').text('X has control of the board');	
   		} //end playO set square
   		checkWinClass('O');	
-  	}
+  		if (turnCounter >= 9) {
+					$('.turnText').text('Tie Game.  Click reset to play again');
+				}
+				else {
+					
+				}
+  }	}
   }); // Selecting a game square
-
+	
+  
+  
   //Reset Button
   $('.reset').click(function (event){
   	$('.gameBox').removeClass('playO');
@@ -63,10 +84,8 @@ $(document).ready(function () {
   	$('.gameBox').empty();
   	$('.turnText').text('X has control of the board');
   	turn = true;
-	  //var turnCounter = 0;
-	 	var moveSquare;
-	 	var xMoves = [];
-	  var oMoves = [];
+	  turnCounter = 0;
+	  gameOver = false;
   });
 
 function checkWinClass (play) {
@@ -74,43 +93,51 @@ function checkWinClass (play) {
 	console.log(play);
   if (($('.r1c1').text() === play) && ($('.r1c2').text() === play) && ($('.r1c3').text() === play)) {
      console.log('you win1');
-     $('.winner').text($('.r1c1').text() + ' has won the game!');
-     return;
+     $('.turnText').text( play + ' has won the game!');
+     gameOver = true;
+     return gameOver;
   }
   else if (($('.r1c1').text() === play) && ($('.r2c1').text() === play) && ($('.r3c1').text() === play)) {
   	console.log('you win2');
-  	$('.winner').text($('.r1c1').text() + ' has won the game!');
-     return;
+  	$('.turnText').text( play + ' has won the game!');
+     gameOver = true;
+     return gameOver;
   }
   else if (($('.r1c1').text() === play) && ($('.r2c2').text() === play) && ($('.r3c3').text() === play)) {
   	console.log('you win3');
-  	$('.winner').text($('.r1c1').text() + ' has won the game!');
-     return;
+  	$('.turnText').text( play + ' has won the game!');
+     gameOver = true;
+     return gameOver;
   }
   else if (($('.r2c1').text() === play) && ($('.r2c2').text() === play) && ($('.r2c3').text() === play)) {
   	console.log('you win4');
-  	$('.winner').text($('.r2c1').text() + ' has won the game!');
-     return;
+  	$('.turnText').text( play + ' has won the game!');
+     gameOver = true;
+     return gameOver;
   }
   else if (($('.r3c1').text() === play) && ($('.r3c2').text() === play) && ($('.r3c3').text() === play)) {
   	console.log('you win5');
-  	$('.winner').text($('.r3c1').text() + ' has won the game!');
-     return;
+  	$('.turnText').text( play + ' has won the game!');
+     gameOver = true;
+     return gameOver;
   }
   else if (($('.r1c2').text() === play) && ($('.r2c2').text() === play) && ($('.r3c2').text() === play)) {
   	console.log('you win6');
-  	$('.winner').text($('.r1c2').text() + ' has won the game!');
-     return;
+  	$('.turnText').text( play + ' has won the game!');
+     gameOver = true;
+     return gameOver;
   }
   else if (($('.r1c3').text() === play) && ($('.r2c3').text() === play) && ($('.r3c3').text() === play)) {
   	console.log('you win7');
-  	$('.winner').text($('.r1c3').text() + ' has won the game!');
-     return;
+  	$('.turnText').text( play + ' has won the game!');
+     gameOver = true;
+     return gameOver;
   }
   else if (($('.r1c3').text() === play) && ($('.r2c2').text() === play) && ($('.r3c1').text() === play)) {
   	console.log('you win8');
-  	$('.winner').text($('.r1c3').text() + ' has won the game!');
-     return;
+  	$('.turnText').text( play + ' has won the game!');
+     gameOver = true;
+     return gameOver;
   }
   else {
   	console.log('continue playing');

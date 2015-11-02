@@ -12,6 +12,8 @@
   <!-- custom styles -->
 <link rel = "stylesheet" href="main.css">
 
+ <!-- custom font -->
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   <title>Tic Tac Toe</title>
 </head>
 <body>
@@ -30,8 +32,8 @@
         <div class="choosePlayer row">
           <div class="col-xs-12">
             <div class="btn-group" role="group" aria-label="...">
-              <button type="button" class="btn btn-default">Player 1</button>
-              <button type="button" class="btn btn-default">Player 2</button>
+              <button type="button" class="pageButtons btn btn-default">Player 1</button>
+              <button type="button" class="pageButtons btn btn-default">Player 2</button>
             </div>
           </div>
         </div>
@@ -61,7 +63,7 @@
           <div class="gameBox r3c3 col-xs-4 box"></div>
         </div> <!-- end row3 -->
         <div class="row button">
-          <button class="reset">Reset</button>
+          <button type="button" class="reset pageButtons btn btn-default"><span class="resetIcon glyphicon glyphicon-repeat" aria-hidden="true"></span>Reset</button>
         </div> <!-- end button row -->
       </div> <!-- end gameBoard div -->
     </div> <!-- end main row -->
