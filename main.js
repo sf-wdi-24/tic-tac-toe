@@ -72,4 +72,4 @@ $(document).ready(function() {
         $(this).on("click", {x:index}, play);
       });
     });
-}); 
+});
