@@ -20,8 +20,15 @@ h1 {
   height: 150px;
 }
 
-.o {
+/*.o {
 	color: green;
 }
 
-.
+.x {
+	color: red;
+}*/
+
+p {
+	color: white;
+	font-size: 95px;
+}
