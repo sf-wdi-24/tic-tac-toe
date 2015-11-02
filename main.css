@@ -1,8 +1,35 @@
+.wrapper{
+	background-color: rgba(100, 50, 50, .3);
+
+}
+
 #board {
   margin-top: 10px;
+  background-color: rgba(100, 100, 100, 0.2);
+  
 }
 
 .box {
   border: 1px solid black;
   height: 150px;
+  display: inline-block;
+  font-family: 'Lobster', cursive;
+  font-size: 60px;
+  padding: 15px; /*This makes the spaces on the board appear as boxes*/
 }
+
+#reset {
+	background-color: rgba(255, 0, 0, .75);
+	margin-top: 10px;
+	font-style: bold;
+	border: thin;
+	color: white;
+	background-color: black;
+}
+
+h1 {
+	font-family: 'Bitter', serif;
+	font-size: 65px;
+}
+
+
