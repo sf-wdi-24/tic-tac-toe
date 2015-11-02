@@ -1,5 +1,6 @@
 // wait for DOM to load before running JS
 $(document).ready(function() {
+  //debugger
 	var counter = 0;
 	var name = "";
 	var winner = false;
@@ -32,11 +33,13 @@ $(document).ready(function() {
 	 });
 
   	// Action taken upon click within board
+    // This block should be cleaned up eventually
   	$('.box').click(function(){
   		var idiwant = "#"+this.id[0]+this.id;
-  		// Assumes board is open and there is no winner yet
+  		// Assumes board is open, there is no winner yet, we shouldn't be waiting for computer and we've started the game
   		if(($(idiwant).text() === "null") && (wait === false) && (winner === false) && ($('#setBoard').text() !== "Start Game")){
-	  		if(counter%2 === 0){
+	  		// Player a's move
+        if(counter%2 === 0){
 	  			$(idiwant).text("X");
           console.log($(idiwant).addClass("x"));
 	  			$(idiwant).addClass("x");
@@ -46,6 +49,7 @@ $(document).ready(function() {
 				  getWinner();
 	  			$('#whosmove').text(player_two + "'s move!");
 	  			counter += 1;
+          // Player b's move if player b is a person
 	  		} else if(($('#ComputerTrueCheckbox').prop("checked") === false) && (counter%2 !== 0)) {
 	  			$(idiwant).text("O");
 	  			$(idiwant).addClass("o");
@@ -55,6 +59,7 @@ $(document).ready(function() {
 				  getWinner();
 	  			$('#whosmove').text(name + "'s move!");
 	  			counter += 1;
+          // Player b's move if player b is the computer
 	  		} else {
 	  			computerMove();
 	  			last_player = "Computer";
@@ -62,15 +67,16 @@ $(document).ready(function() {
 	  			counter += 1;
 	  		}
 	  		$('#name').hide();
-  			//console.log(counter);
+  			// Cat's game
   			if((counter === 9) && (winner === false)){
   				alert("Cat's game!");
   				$('#whosmove').text("");
   			}
   		} else {
-  			// Assumes it's a new game
+  			// Tells user to wait for computer to make move
   			if (wait === true) {
           alert("Wait for computer to move");
+        // Tells user to hit "start game" to start a game
         } else if($('#setBoard').text() === "Start Game"){
   				alert("Start game! (see button above)");
   			// Assumes there has been a winner
@@ -85,7 +91,7 @@ $(document).ready(function() {
 
   	// Reset the board
   	function resetBoard(){
-		$('.inbox').text("null");
+		  $('.inbox').text("null");
 	  	$('.inbox').hide();
       $('.inbox').removeClass("x");
       $('.inbox').removeClass("o");
@@ -96,6 +102,7 @@ $(document).ready(function() {
 	  	}
 	  	winner = false;
 	  	counter = 0;
+      moveArray = [];
 	  	$('#ComputerTrueCheckbox').show();
 		$('#ComputerTrueCheckboxLabel').show();
   	}
@@ -197,7 +204,7 @@ $(document).ready(function() {
   	function randomMove() {
   		var moveNumber = Math.floor(Math.random() * (10 - 1)) + 1;
   		if(moveArray.indexOf(moveNumber) !== -1){
-  			setTimeout(randomMove,2500);
+  			return randomMove();
   		} else {
   			console.log("randomMove else: " + moveNumber);
   			return moveNumber;
@@ -264,7 +271,7 @@ $(document).ready(function() {
   			winner = true;
   			$('#whosmove').text(" ");
   		} else {
-  			console.log("keep playing");
+  			console.log("No Winner Yet");
   		}
   	}
 
