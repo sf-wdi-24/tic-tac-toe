@@ -37,19 +37,21 @@ $(document).ready(function() {
   		if(($(idiwant).text() === "null") && (winner === false) && ($('#setBoard').text() !== "Start Game")){
 	  		if(counter%2 === 0){
 	  			$(idiwant).text("X");
-	  			idToNumber(idiwant);
+          console.log($(idiwant).addClass("x"));
 	  			$(idiwant).addClass("x");
-	  			last_player = name;
 	  			$(idiwant).show();
-				getWinner();
+          idToNumber(idiwant);
+          last_player = name;
+				  getWinner();
 	  			$('#whosmove').text(player_two + "'s move!");
 	  			counter += 1;
-	  		} else if($('#ComputerTrueCheckbox').prop("checked") === false) {
+	  		} else if(($('#ComputerTrueCheckbox').prop("checked") === false) && (counter%2 !== 0)) {
 	  			$(idiwant).text("O");
 	  			$(idiwant).addClass("o");
+          console.log($(idiwant).addClass("o"));
 	  			last_player = player_two;
 	  			$(idiwant).show();
-				getWinner();
+				  getWinner();
 	  			$('#whosmove').text(name + "'s move!");
 	  			counter += 1;
 	  		} else {
@@ -82,6 +84,8 @@ $(document).ready(function() {
   	function resetBoard(){
 		$('.inbox').text("null");
 	  	$('.inbox').hide();
+      $('.inbox').removeClass("x");
+      $('.inbox').removeClass("o");
 	  	if(counter === 0){
 	  		$('#setBoard').text("Reset Board");
 	  	} else {
@@ -111,42 +115,54 @@ $(document).ready(function() {
   	function computerMove() {
   		var computerMoveNum = randomMove();
   		console.log("computerMove: " + computerMoveNum);
-  		if(computerMoveNum === 1){
+  		if (computerMoveNum === undefined) {
+        console.log("copmuterMoveNum is undefined");
+        setTimeout(computerMove,2500);
+      } else if(computerMoveNum === 1){
   			$("#aa1").text("O");
   			$("#aa1").addClass("o");
   			$("#aa1").show();
+        moveArray.push(computerMoveNum);
   		} else if(computerMoveNum === 2){
   			$("#aa2").text("O");
   			$("#aa2").addClass("o");
   			$("#aa2").show();
+        moveArray.push(computerMoveNum);
   		} else if(computerMoveNum === 3){
   			$("#aa3").text("O");
   			$("#aa3").addClass("o");
   			$("#aa3").show();
+        moveArray.push(computerMoveNum);
   		} else if(computerMoveNum === 4){
   			$("#bb1").text("O");
   			$("#bb1").addClass("o");
   			$("#bb1").show();
+        moveArray.push(computerMoveNum);
   		} else if(computerMoveNum === 5){
   			$("#bb2").text("O");
   			$("#bb2").addClass("o");
   			$("#bb2").show();
+        moveArray.push(computerMoveNum);
   		} else if(computerMoveNum === 6){
   			$("#bb3").text("O");
   			$("#bb3").addClass("o");
   			$("#bb3").show();
+        moveArray.push(computerMoveNum);
   		} else if(computerMoveNum === 7){
   			$("#cc1").text("O");
   			$("#cc1").addClass("o");
   			$("#cc1").show();
+        moveArray.push(computerMoveNum);
   		} else if(computerMoveNum === 8){
   			$("#cc2").text("O");
   			$("#cc2").addClass("o");
   			$("#cc2").show();
+        moveArray.push(computerMoveNum);
   		} else if(computerMoveNum === 9){
   			$("#cc3").text("O");
   			$("#cc3").addClass("o");
   			$("#cc3").show();
+        moveArray.push(computerMoveNum);
   		} else {
   			console.log("not one of them");
   			setTimeout(computerMove,2500);
@@ -172,7 +188,6 @@ $(document).ready(function() {
   			setTimeout(randomMove,2500);
   		} else {
   			console.log("randomMove else: " + moveNumber);
-  			moveArray.push(moveNumber);
   			return moveNumber;
   		}
   	}
