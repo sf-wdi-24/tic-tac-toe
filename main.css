@@ -15,24 +15,24 @@ hr {
 	color: goldenrod;
 }
 
-.btn {
+.btn, .btn-default {
     padding: 14px 24px;
     border: 0 none;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
+    background: gold;
+    color: goldenrod;
 }
  
 .btn:focus, .btn:active:focus, .btn.active:focus {
     outline: 0 none;
 }
  
-.btn-default {
-    background: gold;
-    color: goldenrod;
-}
- 
-.btn-default:hover, .btn-default:focus , .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+.btn-default:hover, .btn-default.focus, .btn-default:focus, 
+.btn-default:active, .btn-default.active, .btn-default:visited,
+.btn-default:active:hover, .btn-default.active:hover,
+.open > .dropdown-toggle.btn-default {
     background: goldenrod;	
     color: gold;
 }
