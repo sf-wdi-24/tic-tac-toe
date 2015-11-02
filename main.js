@@ -29,10 +29,10 @@ $(document).ready(function() {
     function play (event){
         clickCount++;
       if (clickCount % 2 !== 0) {
-        $(this).append("<h1>X</h1>");
+        $(this).append("<h1 id='x'>X</h1>");
         $(this).off('click');
         } else if (clickCount % 2 === 0) {
-          $(this).append("<h1>O</h1>");
+          $(this).append("<h1 id='o'>O</h1>");
           $(this).off('click');
         }
       //record index of x boxes and o boxes
@@ -48,7 +48,7 @@ $(document).ready(function() {
         });
         //declare winner and disable the click of remaining box
         if (declareWinner(x)) {
-          alert("x win");
+          alert('x win');
           $('.box').off('click'); 
         } else if (declareWinner(o)) {
           alert('o win'); 
@@ -59,8 +59,8 @@ $(document).ready(function() {
       }
     }
 
-    $(".box").each(function(index){
-        $(this).on("click", {x:index}, play);
+    $('.box').each(function(index){
+        $(this).on('click', {x:index}, play);
     });
     //reset record and all counter, clear the board, then play again
     $('#reset').on('click',function(){
@@ -68,8 +68,8 @@ $(document).ready(function() {
       clickCount = 0;
       record = [];
       count = 0;
-      $(".box").each(function(index){
-        $(this).on("click", {x:index}, play);
+      $('.box').each(function(index){
+        $(this).on('click', {x:index}, play);
       });
     });
 });
