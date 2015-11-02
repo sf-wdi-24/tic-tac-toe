@@ -1,8 +1,42 @@
+h1 {
+	font-family: 'Sigmar One', cursive;
+	color: #1C1C1C
+}
+
 #board {
-  margin-top: 10px;
+	margin-top: 10px;
+	text-align: center
 }
 
 .box {
-  border: 1px solid black;
+  border: 10px solid black;
   height: 150px;
+  text-align: center;
+  font-size: 100px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 5px
+}
+
+body{
+	background-color: #BDBDBD;
+}
+
+button {
+	width: 300px;
+	background-color: white;
+	padding: 20px;
+	border-radius: 20px;
+}
+
+h1{
+	font-size: 72px;
+}
+	
+.box {
+	border: solid #1C1C1C;
+	height: 150px;
+	text-align: center;
+	background-color: white;
+	border-radius: 100px
 }
