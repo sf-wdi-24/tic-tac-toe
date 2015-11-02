@@ -2,7 +2,7 @@
 $(function() {
   
 	var turnCount = 0;
-	var winArray = [[0,1,2],[0,3,6],[2,5,8],[6,7,8],[0,4,8],[2,4,6],[1,4,7],[3,4,5]];
+	// var winArray = [[0,1,2],[0,3,6],[2,5,8],[6,7,8],[0,4,8],[2,4,6],[1,4,7],[3,4,5]];
 
 	// $('.box').on('click', function() {
 	// 	turnCount++;
@@ -19,9 +19,11 @@ $(function() {
 		$('.box').on('click', function() {
 			turnCount++;
 			if(turnCount % 2 === 0) {
+				$(this).addClass('x')
 				$(this).html('<p>X</p>');
 				$(this).off('click');
 			}else {
+				$(this).addClass('o')
 				$(this).html('<p>O</p>');
 				$(this).off('click')
 			}
@@ -50,5 +52,49 @@ play();
 			}
   }
 **/
+
+
+
+//get winner
+//very dirty way 
+var x = 'x';
+var o = 'o';
+var spot1 = $('#a');
+var spot2 = $('#b');
+var spot3 = $('#c');
+var spot4 = $('#d');
+var spot5 = $('#e');
+var spot6 = $('#f');
+var spot7 = $('#g');
+var spot8 = $('#h');
+var spot9 = $('#i');
+
+$('.box').on('click', function() {
+	if(spot1.hasClass('o') && spot2.hasClass('o') && spot3.hasClass('o') ||
+		spot4.hasClass('o') && spot5.hasClass('o') && spot6.hasClass('o') ||
+		spot7.hasClass('o') && spot8.hasClass('o') && spot9.hasClass('o') ||
+		spot1.hasClass('o') && spot4.hasClass('o') && spot7.hasClass('o') ||
+		spot2.hasClass('o') && spot5.hasClass('o') && spot8.hasClass('o') ||
+		spot3.hasClass('o') && spot6.hasClass('o') && spot9.hasClass('o') ||
+		spot1.hasClass('o') && spot5.hasClass('o') && spot9.hasClass('o') ||
+		spot3.hasClass('o') && spot5.hasClass('o') && spot7.hasClass('o')
+		) {
+		alert('winner is ' + o )
+	  $('.box').removeClass('o');
+    $('.box').removeClass('x');
+	} else if (spot1.hasClass('x') && spot2.hasClass('x') && spot3.hasClass('x') ||
+		spot4.hasClass('x') && spot5.hasClass('x') && spot6.hasClass('x') ||
+		spot7.hasClass('x') && spot8.hasClass('x') && spot9.hasClass('x') ||
+		spot1.hasClass('x') && spot4.hasClass('x') && spot7.hasClass('x') ||
+		spot2.hasClass('x') && spot5.hasClass('x') && spot8.hasClass('x') ||
+		spot3.hasClass('x') && spot6.hasClass('x') && spot9.hasClass('x') ||
+		spot1.hasClass('x') && spot5.hasClass('x') && spot9.hasClass('x') ||
+		spot3.hasClass('x') && spot5.hasClass('x') && spot7.hasClass('x')
+		) {
+		alert('winner is ' + x );
+		$('.box').removeClass('o');
+    $('.box').removeClass('x');
+	}
+})
 
 });
