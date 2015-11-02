@@ -14,5 +14,10 @@ $(function() {
 		}
 	})
 
+  $('#reset').on('click',function(){
+    $('.box').empty();
+    clickCount = 0;
+    $('.box').html('<p>+</p>')
+  });
 
 });
