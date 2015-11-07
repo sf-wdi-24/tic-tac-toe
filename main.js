@@ -1,4 +1,5 @@
 // wait for DOM to load before running JS
+
 var arr = [[],[],[]]; // the board 
 var movesBackground= "";
 var totalMoves = 0;
@@ -12,9 +13,15 @@ var status = "continue";
 		status = "continue";
 		totalMoves = 0;
 
+		
+		$("#announcments").removeClass("winnerAnnounce");
 		$(".inboard").removeClass("xBackground");
 		$(".inboard").removeClass("oBackground");
-		$("#announcments>p").remove();
+		$(".inboard").removeClass("winner");
+		$("#announcments>h2").remove();
+		$("#announcments>h6").remove();
+		$("#announcments").append("<h1>Player:</h1>");
+
 
 	
 		for (var i = 0; i < 3; i++){
@@ -67,8 +74,16 @@ var status = "continue";
 					return initiateGame();
 				}
 				else if ((status === "x")||(status === "o")){
-					alert("the winner is: " + status);
-					return initiateGame();
+					
+					//adding winner gif
+
+					$(".inboard").addClass("winner");
+					$("#announcments").addClass("winnerAnnounce");
+					$("#announcments>h1").remove();
+					$("#announcments>p").replaceWith("<h2>The Winner is: " + status + "</h2>");
+					$("#announcments").append("<h6>(Click Start a new game to restart the board)</h6>");	
+
+
 			}
 		}
 
@@ -118,7 +133,7 @@ var status = "continue";
 	 $(".inboard").click(move);
 	 $("#button").click(initiateGame);
 	
-
+	
 
 
 
