@@ -1,8 +1,82 @@
-#board {
-  margin-top: 10px;
+body{
+	background-color: pink;
 }
 
-.box {
-  border: 1px solid black;
-  height: 150px;
+/*9 divs that creates the board*/ 
+
+.inboard{
+	border: 5px solid black;
+	background-color: rgba(128, 128, 128, 0.22);
+	display: inline-block;
+	height: 100px;
+	width: 100px;
+}
+/*div around the 9 .inboard divs*/
+
+#aroundBoard{
+	float: left;
+	margin-left: 428px;
+	margin-top: 10px;
+	padding: 0;
+}
+/*div around "start a new game" button*/
+
+#button{
+	margin-left: 413px;
+	margin-top: 200px;
+	margin-bottom: 10px;
+	width: 300px;
+}
+
+/*"start a new game" button*/
+
+button{
+	width: 300px;
+}
+
+/*x img. becomes the background of the sellected divs */
+
+.xBackground{
+background-image: url("data:image/png;base64,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");
+background-size: 100px;
+}
+
+/*o img. becomes the background of the sellected divs */
+
+.oBackground{
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDx7_3XMtXOlLRumM1Rlx3MjYy-lr24FEFGNjv0qCLQqwEjl9B");
+background-size: 90px;
+}
+
+/*right side div shows the current player */
+
+#announcments{
+	background-color: #6D84B4;
+	border: 10px solide black;
+	color: black;
+	display: inline;
+	float: right;
+	font-size: 100px;
+	height: 300px;
+	margin-left: 30px;
+	margin-top: 10px;
+	width: 300px;	
+}
+
+/*tic tac toe header*/
+
+#header{
+	border-bottom: 3px solid black;
+	background-color: gray;
+	margin: 0;
+}
+
+.winner{
+	background-position: -15px;
+	background-image: url("http://www.michelespaintshop.com/images/winner-2.gif");
+	background-size: 120px;
+	padding: 10px;
+}
+.winnerAnnounce{
+	padding: 70px;
 }
